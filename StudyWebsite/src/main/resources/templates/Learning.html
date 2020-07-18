@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Dashboard Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/asserts/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/asserts/css/dashboard.css}" rel="stylesheet">
+    <style type="text/css">
+        /* Chart.js */
+
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+    <style type="text/css">
+        .cardBox {
+            width: 200px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            float: left;
+            margin-right: 10px;
+            padding: 5px;
+            padding-top: 15px;
+        }
+
+        .headerBox {
+            color: #fff;
+            padding: 10px;
+            font-size: 15px;
+            height: 60px;
+        }
+
+        .bodyBox {
+            padding: 10px;
+        }
+
+        .bodyBox p {
+            margin-left: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div th:insert="~{top}"></div>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="cardBox" th:each="c:${Course}">
+        <div class="headerBox" style="background-color: #4caf50;">
+            <p>
+                <a title="查看详情" style="cursor: pointer; color:white" onclick="viewXmInfo('${var.OMP_XM_ID}');">项目名称一</a>
+            </p>
+        </div>
+        <div class="bodyBox">
+
+            <p th:text="${c}"></p>
+        </div>
+        <a class="btn btn-sm btn-primary" th:href="@{/toAdd/}+${c}">添加</a>
+    </div>
+
+</main>
+
+
+
+</body>
+
+
+</html>
+

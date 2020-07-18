@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        div{
+            width: 200px;
+            height: 200px;
+
+        }
+        .center-in-center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    <title>Dashboard Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/asserts/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div class="center-in-center">
+    <a class="btn btn-sm btn-primary"  th:href="@{/Login}">加入我们</a>
+</div>
+</body>
+</html>
